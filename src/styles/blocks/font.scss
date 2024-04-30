@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../assets/icons-font/icomoon.eot?yah8ir');
+  src:  url('../../assets/icons-font/icomoon.eot?yah8ir#iefix') format('embedded-opentype'),
+  url('../../assets/icons-font/icomoon.ttf?yah8ir') format('truetype'),
+  url('../../assets/icons-font/icomoon.woff?yah8ir') format('woff'),
+  url('../../assets/icons-font/icomoon.svg?yah8ir#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tg:before {
+  content: "\e905";
+}
+.icon-vk:before {
+  content: "\e906";
+}
+.icon-home:before {
+  content: "\e900";
+}
+.icon-bell:before {
+  content: "\e951";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-equalizer:before {
+  content: "\e993";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-checkmark2:before {
+  content: "\ea11";
+}
+.icon-circle-right:before {
+  content: "\ea42";
+}
+.icon-circle-down:before {
+  content: "\ea43";
+}

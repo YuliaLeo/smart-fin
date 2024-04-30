@@ -1,0 +1,17 @@
+.footer {
+  padding: 16px 0 64px;
+  background-color: #000000CC;
+
+  &__col {
+    display: grid;
+    gap: 8px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29.26px;
+  }
+
+  &__link {
+    padding-left: 15px;
+  }
+}

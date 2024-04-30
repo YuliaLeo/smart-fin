@@ -1,0 +1,33 @@
+.header {
+  padding: 20px 0;
+  background-color: #000000CC;
+  display: block;
+  box-sizing: border-box;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+
+  &__icon {
+    width: 58px;
+    height: 62px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 55px;
+    color: #ffffff;
+    font-size: 40px;
+  }
+}
+
+.header-logo {
+  &__text {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 85.33px;
+    color: #FFFFFF;
+  }
+}

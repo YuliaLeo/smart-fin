@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<div class="expenditure-page">
+    <div class="container expenditure-page__container">
+        <div class="expenditure-page__header expenditure-header">
+            <div class="expenditure-header__img">
+                <img src="assets/photo.jpg" alt="Profile">
+            </div>
+             <div class="expenditure-header__data">
+                 <h1 class="expenditure-header__username">Михаил Шимарков</h1>
+                 <div class="expenditure-header__item">
+                     <p class="expenditure-header__title">Номер телефона:</p>
+                     <p>+7(666) 523-22-33</p>
+                 </div>
+                 <div class="expenditure-header__item">
+                     <p class="expenditure-header__title">Ваш доход:</p>
+                     <p>426 000 ₽</p>
+                 </div>
+             </div>
+        </div>
+        @if (!editorMode) {
+            <button class="expenditure-page__btn btn" type="button" (click)="addIncome()">
+                <span>Добавить расходы</span>
+                <span class="icon-circle-right"></span>
+            </button>
+        }
+        @else {
+            <form [formGroup]="form" class="expenditure-page__add add-expense" (submit)="submit()">
+                <div class="add-expense__content">
+                    <div class="add-expense__column">
+                        <div class="add-expense__item">
+                            <div class="add-expense__title">Название расхода</div>
+                            <input class="add-expense__input input" type="text" formControlName="name" placeholder="Наименование">
+                        </div>
+                        <div class="add-expense__item">
+                            <div class="add-expense__title">Категория</div>
+                            <select id="category-select" class="category-select" formControlName="category">
+                                @for(category of categories; track $index) {
+                                    <option [value]="category">{{ category }}</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="add-expense__column">
+                        <div class="add-expense__item">
+                            <div class="add-expense__title">Дата</div>
+                            <input class="add-expense__input input" type="text" formControlName="date" placeholder="24.04.24">
+                        </div>
+                        <div class="add-expense__item">
+                            <div class="add-expense__title">Стоимость</div>
+                            <input class="add-expense__input input" type="text" formControlName="cost" placeholder="Цена">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="add-expense__btn icon-checkmark2"></button>
+            </form>
+        }
+        <div class="expenditure-page__table">
+            <h2 class="expenditure-table__title">История расходов</h2>
+            <ul class="expenditure-table">
+                @for (item of expenditureHistory; track item.name; let i = $index) {
+                    <li class="expenditure-table__item">
+                        <div class="expenditure-table__block">
+                            <div class="expenditure-table__name">{{item.name}}</div>
+                            <div class="expenditure-table__info">{{item.date}}</div>
+                            <div class="expenditure-table__icon icon-equalizer"></div>
+                        </div>
+                        <div class="expenditure-table__block">
+                            <div class="expenditure-table__name">{{item.category}}</div>
+                            <div class="expenditure-table__info">{{item.amount}}</div>
+                            <div class="expenditure-table__icon icon-bin"></div>
+                        </div>
+                    </li>
+                }
+                <div class="expenditure-table__arrow icon-circle-down"></div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

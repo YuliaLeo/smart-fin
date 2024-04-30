@@ -1,0 +1,71 @@
+<div class="container rows">
+    <div class="registration__header reg-header">
+       <div class="reg-header__block">
+           <div class="reg-header__title">SmartFin</div>
+           <div class="reg-header__logo">
+               <img src="assets/logo.svg" alt="">
+           </div>
+       </div>
+        <div class="reg-header__desc">Центр аналитики твоих расходов</div>
+    </div>
+    <form [formGroup]="form" class="registration__form reg-form" (submit)="submit()">
+        @if (isFirstBlock) {
+            <div class="reg-form__block">
+                <div class="reg-form__main">
+                    <h3 class="reg-form__title">Давай познакомимся</h3>
+                    <div class="reg-form__fields">
+                        <input formControlName="name" class="input" type="text" placeholder="Имя">
+                        <input formControlName="surname" class="input" type="text" placeholder="Фамилия">
+                    </div>
+                </div>
+                <button type="button" class="btn" (click)="isFirstBlock = false; isSecondBlock = true">
+                    <span>Продолжить</span>
+                    <span class="icon-circle-right"></span>
+                </button>
+            </div>
+        }
+        @if (isSecondBlock) {
+            <div class="reg-form__block">
+                <div class="reg-form__main">
+                    <h3 class="reg-form__title">Номер телефона</h3>
+                    <div class="reg-form__fields">
+                        <input formControlName="phone" class="input" type="text" placeholder="+7 (665) 929-22-33">
+                    </div>
+                </div>
+                <button type="button" class="btn" (click)="isSecondBlock = false; isThirdBlock = true">
+                    <span>Продолжить</span>
+                    <span class="icon-circle-right"></span>
+                </button>
+            </div>
+        }
+        @if (isThirdBlock) {
+            <div class="reg-form__block">
+                <div class="reg-form__main">
+                    <h3 class="reg-form__title">Код потверждения</h3>
+                    <div class="reg-form__fields">
+                        <input class="input" type="text" placeholder="ХХХ-ХХХ">
+                    </div>
+                </div>
+                <button type="button" class="btn" (click)="isThirdBlock = false; isFourthBlock = true">
+                    <span>Продолжить</span>
+                    <span class="icon-circle-right"></span>
+                </button>
+            </div>
+        }
+        @if (isFourthBlock) {
+            <div class="reg-form__block">
+                <div class="reg-form__main">
+                    <h3 class="reg-form__title">Начнем с твоего дохода</h3>
+                    <div class="reg-form__fields">
+                        <input formControlName="income" class="input" type="text" placeholder="426000">
+                    </div>
+                    <div class="reg-form__desc">Свой доход ты всегда можешь изменить в профиле!</div>
+                </div>
+                <button type="submit" class="btn">
+                    <span>Продолжить</span>
+                    <span class="icon-circle-right"></span>
+                </button>
+            </div>
+        }
+    </form>
+</div>

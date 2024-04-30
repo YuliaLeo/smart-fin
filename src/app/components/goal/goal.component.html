@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<div class="goal">
+    <h2 class="goal__title">
+       <div class="container">
+           Рассчитывай свой бюджет с нами
+       </div>
+    </h2>
+
+    <div class="goal__main">
+        <div class="container goal__container">
+            <div class="goal__block">
+                <div class="goal__item income">
+                    <div class="income__title">Ваш доход:</div>
+                    <div class="income__value">426 т. р.</div>
+                </div>
+                <div class="goal__item goal-item">
+                    <div class="goal-item__block">
+                        <h3 class="goal-item__title">Цель:</h3>
+                        <div class="goal-item__date">Срок: <span>29.04.24</span></div>
+                        <div class="goal-item__cost">Стоимость: <span>10 500 000 ₽</span></div>
+                    </div>
+                    <div class="goal-item__name">Компьютер</div>
+                </div>
+            </div>
+            <div class="goal__block expenses">
+                <div class="expenses__titles">
+                    <div class="expenses__title">Планируемые расходы</div>
+                    <div class="expenses__title">Потрачено</div>
+                    <div class="expenses__title">Разница</div>
+                </div>
+                <div class="expenses__table">
+                    @for (expense of expenses; track expense.name; let i = $index) {
+                        <div class="expenses__item expense-item">
+                            <div class="expense-item__item">{{expense.name}}</div>
+                            <div class="expense-item__item">{{expense.planned}}</div>
+                            <div class="expense-item__item">{{expense.spent}}</div>
+                            <div class="expense-item__item">{{expense.diff}}</div>
+                        </div>
+                    }
+                </div>
+                <div class="checker"></div>
+            </div>
+            <div class="goal__block goal-general">
+                <div class="goal-general__main-title">Цель</div>
+                <div class="goal-general__title">Название цели</div>
+                <div class="goal-general__name">Компьютер</div>
+                <div class="goal-general__block">
+                    <div class="goal-general__item">
+                        <div class="goal-general__title">Стоимость</div>
+                        <div class="goal-general__name">10 500 000 ₽</div>
+                    </div>
+                    <div class="goal-general__item">
+                        <div class="goal-general__title">Дата</div>
+                        <div class="goal-general__name">29.04.24</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,56 @@
+.registration {
+  --container-max-width: 615px;
+  padding: 55px 0;
+  display: block;
+  --rows-gap: 70px;
+}
+
+.reg-header {
+  display: grid;
+  gap: 10px;
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+  }
+
+  &__title {
+    font-size: 100px;
+    color: #181818;
+    font-weight: 900;
+  }
+
+  &__desc {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.reg-form {
+  &__block {
+    display: grid;
+    gap: 50px;
+  }
+
+  &__main {
+    display: grid;
+    gap: 15px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__desc {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__fields {
+    display: grid;
+    gap: 10px;
+  }
+}
