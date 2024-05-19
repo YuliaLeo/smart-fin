@@ -45,9 +45,13 @@ export class RegistrationComponent implements OnInit {
     }
 
     public submit() {
-        const body = this.form.getRawValue();
+        let body = this.form.getRawValue();
+        let newBody = {
+            phone: body.phone,
+            income: body.income
+        }
 
-        this._registrationService.register(body).subscribe(() => {
+        this._registrationService.register(newBody).subscribe(() => {
             this._router.navigate([AppRoutes.MainPage]);
         });
     }

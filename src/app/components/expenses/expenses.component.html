@@ -25,7 +25,7 @@
             </button>
         }
         @else {
-            <form [formGroup]="form" class="expenditure-page__add add-expense" (submit)="submit()">
+            <form [formGroup]="form" class="expenditure-page__add add-expense">
                 <div class="add-expense__content">
                     <div class="add-expense__column">
                         <div class="add-expense__item">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="add-expense__btn icon-checkmark2"></button>
+                <button type="submit" class="add-expense__btn icon-checkmark2" (click)="submit()"></button>
             </form>
         }
         <div class="expenditure-page__table">
